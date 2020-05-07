@@ -24,14 +24,23 @@
                                             <constraint firstAttribute="height" constant="100" id="Nec-m8-Mg3"/>
                                         </constraints>
                                         <state key="normal" image="us"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Zo-ca-f5U"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBr-Ge-IdC">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBr-Ge-IdC">
                                         <rect key="frame" x="0.0" y="130" width="200" height="100"/>
                                         <state key="normal" image="us"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNd-Kx-FB4"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrc-z6-ZXP">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrc-z6-ZXP">
                                         <rect key="frame" x="0.0" y="260" width="200" height="100"/>
                                         <state key="normal" image="us"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tq5-Ah-ZLo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
