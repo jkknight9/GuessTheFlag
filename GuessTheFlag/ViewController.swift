@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var questions = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,24 +39,36 @@ class ViewController: UIViewController {
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased())                 Score: \(score)"
     }
     
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
-        if sender.tag == correctAnswer {
-            title = "Correct"
-            score += 1
-        } else {
-            title = "Wrong"
-            score -= 1
+        if questions < 9 {
+            print(questions)
+            if sender.tag == correctAnswer {
+                title = "Correct."
+                questions += 1
+                score += 1
+            } else {
+                title = "Wrong. "
+                questions += 1
+                score -= 1
+            }
+            let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            present(ac, animated: true)
         }
-        
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        
-        present(ac, animated: true)
+        else {
+            let AC = UIAlertController(title: "Great Job", message: "Your fianl score is \(score)", preferredStyle: .alert)
+            AC.addAction(UIAlertAction(title: "Play Again", style: .default, handler: askQuestion))
+            present(AC, animated: true)
+            score = 0
+            questions = 0
+            
+        }
     }
 }
+
 
